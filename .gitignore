@@ -1,0 +1,5 @@
+songs/**
+*.pyc
+*/*.pyc
+**/**.pyc
+*.txt
