@@ -55,7 +55,6 @@ def ex():
 		except:
 			pass
 	onlyfiles = [f for f in listdir(str(paste)) if isfile(join(str(paste), f))]
-	print (onlyfiles)
 	while True:
 		print ("Arquivos disponhibels:")
 		for i in onlyfiles:

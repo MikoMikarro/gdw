@@ -23,6 +23,7 @@ def ex():
 			break
 	os.mkdir("songs/"+xen_name)
 	os.mkdir("songs/"+xen_name+"/No_definido")
+	os.mkdir("songs/"+xen_name+"/No_definido/No_definido")
 	file = open("genres.txt","w")
 	file.write(act_data+xen_name+"\n")
 	file.close
