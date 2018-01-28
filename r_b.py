@@ -25,7 +25,7 @@ def ex():
     data = file.readlines()
     file.close()
     sng_list = []
-    for i in data[ç:-1]:
+    for i in data[:-1]:
         if split(i,"/")[1] == alb_name:
             sng_list.append(i)
     shuffle(sng_list)
