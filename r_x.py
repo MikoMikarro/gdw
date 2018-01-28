@@ -13,11 +13,11 @@ def ex():
         num = 0
         print("Xeneros disponhibles")
         for i in data[1:]:
-            print num," ",split(i,"/")[3]
+            print num," ",i[0:-1]
             num+=1
         ans = input()
         if ans <= num:
-            xen_name == split(data[ans],"/")[3]
+            xen_name = data[1:][ans]
             break
         else:
             print "Xenero non anhadido"
@@ -26,7 +26,7 @@ def ex():
     file.close()
     sng_list = []
     for i in data[:-1]:
-        if split(i,"/")[3] == alb_name:
+        if split(i,"/")[3] == xen_name:
             sng_list.append(i)
     shuffle(sng_list)
     text = ""

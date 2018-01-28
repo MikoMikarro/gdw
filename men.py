@@ -47,8 +47,8 @@ while True:
 		last_act = r_b.ex()
 	elif ans == "h":
 		last_act = r_a.ex()
-	elif ans == "f":
-		pass
+	elif ans == "i":
+		last_act = r_x.ex()
 	elif ans == "s":
 		break
 	elif ans == "ra":

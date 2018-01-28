@@ -13,11 +13,11 @@ def ex():
         num = 0
         print("Autores disponhibles")
         for i in data[1:]:
-            print num," ",split(i,"/")[2]
+            print num," ",split(i,"/")[0]
             num+=1
         ans = input()
         if ans <= num:
-            aut_name == split(data[ans],"/")[2]
+            aut_name = split(data[1:][ans],"/")[0]
             break
         else:
             print "Autor non anhadido"

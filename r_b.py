@@ -13,11 +13,11 @@ def ex():
         num = 0
         print("Albumes disponhibles")
         for i in data[1:]:
-            print num," ",split(i,"/")[1]
+            print num," ",split(i,"/")[0]
             num+=1
         ans = input()
         if ans <= num:
-            alb_name = split(data[ans],"/")[1]
+            alb_name = split(data[1:][ans],"/")[0]
             break
         else:
             print "Album non anhadido"
