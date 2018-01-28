@@ -10,6 +10,7 @@ import a_a
 import a_b
 import a_c
 import r_t
+import r_a
 import v_c
 import o_at
 import random
@@ -24,9 +25,6 @@ while True:
 	print ("b - Nova cancion")
 	print ("c - Novo xenero")
 	print ("d - Novo album")
-	print ("e - Mostrar autores existente")
-	print ("f - Mostrar cancions existentes")
-	print ("g - Mostrar xeneros existentes")
 	print ("h - Lista de reproducion por artista")
 	print ("i - Lista de reproducion por xenero")
 	print ("j - Todo")
@@ -42,8 +40,8 @@ while True:
 	    last_act = a_c.ex()
 	elif ans == "d":
 		last_act = a_b.ex()
-	elif ans == "e":
-		pass
+	elif ans == "h":
+		last_act = r_a.ex()
 	elif ans == "f":
 		pass
 	elif ans == "s":

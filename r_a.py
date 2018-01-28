@@ -4,13 +4,30 @@ import string
 from string import split
 from sys import executable
 from subprocess import Popen, CREATE_NEW_CONSOLE
+
 def ex():
+    file = open("authors.txt","r")
+    data = file.readlines()
+    file.close()
+    while True:
+        num = 0
+        print("Autores disponhibles")
+        for i in data:
+            print num," ",i
+            num+=1
+        ans = input()
+        if ans <= num:
+            aut_name == data[ans]
+            break
+        else:
+            print "Autor non anhadido"
     file = open("audio_data.txt","r")
     data = file.readlines()
     file.close()
-    sng_list=[]
+    sng_list = []
     for i in data[:-1]:
-        sng_list.append(i)
+        if split(i,"/")[2] == aut_name:
+            sng_list.append(i)
     shuffle(sng_list)
     text = ""
     for i in sng_list:
@@ -19,4 +36,4 @@ def ex():
     file.write(text)
     file.close()
     Popen('python reproducer.py', creationflags=CREATE_NEW_CONSOLE)
-    return ("Reproducir todo")
+    return ("Reproducir autor - "+aut_name)
