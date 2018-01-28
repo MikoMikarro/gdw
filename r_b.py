@@ -11,22 +11,22 @@ def ex():
     file.close()
     while True:
         num = 0
-        print("Autores disponhibles")
+        print("Albumes disponhibles")
         for i in data[1:]:
             print num," ",i
             num+=1
         ans = input()
         if ans <= num:
-            aut_name == data[ans]
+            alb_name == data[ans]
             break
         else:
-            print "Autor non anhadido"
+            print "Album non anhadido"
     file = open("audio_data.txt","r")
     data = file.readlines()
     file.close()
     sng_list = []
     for i in data[:-1]:
-        if split(i,"/")[2] == aut_name:
+        if split(i,"/")[1] == alb_name:
             sng_list.append(i)
     shuffle(sng_list)
     text = ""
@@ -36,4 +36,4 @@ def ex():
     file.write(text)
     file.close()
     Popen('python reproducer.py', creationflags=CREATE_NEW_CONSOLE)
-    return ("Reproducir autor - "+aut_name)
+    return ("Reproducir album - "+alb_name)

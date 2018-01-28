@@ -25,6 +25,7 @@ while True:
 	print ("b - Nova cancion")
 	print ("c - Novo xenero")
 	print ("d - Novo album")
+	print ("e - Lista de reproducion por album")
 	print ("h - Lista de reproducion por artista")
 	print ("i - Lista de reproducion por xenero")
 	print ("j - Todo")
@@ -40,6 +41,8 @@ while True:
 	    last_act = a_c.ex()
 	elif ans == "d":
 		last_act = a_b.ex()
+	elif ans == "e":
+		last_act = r_b.ex()
 	elif ans == "h":
 		last_act = r_a.ex()
 	elif ans == "f":
