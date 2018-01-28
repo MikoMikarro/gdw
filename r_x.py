@@ -13,11 +13,11 @@ def ex():
         num = 0
         print("Xeneros disponhibles")
         for i in data[1:]:
-            print num," ",i
+            print num," ",split(i,"/")[3]
             num+=1
         ans = input()
         if ans <= num:
-            xen_name == data[ans]
+            xen_name == split(data[ans],"/")[3]
             break
         else:
             print "Xenero non anhadido"
