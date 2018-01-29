@@ -9,6 +9,7 @@ import a_x
 import a_a
 import a_b
 import a_c
+import rep_joined
 import r_t
 import r_a
 import r_b
@@ -44,17 +45,17 @@ while True:
 	elif ans == "d":
 		last_act = a_b.ex()
 	elif ans == "e":
-		last_act = r_b.ex()
+		last_act = rep_joined.ex("album")
 	elif ans == "h":
-		last_act = r_a.ex()
+		last_act = rep_joined.ex("author")
 	elif ans == "i":
-		last_act = r_x.ex()
+		last_act = rep_joined.ex("genre")
 	elif ans == "s":
 		break
 	elif ans == "ra":
 		pass
 	elif ans == "j":
-		last_act = r_t.ex()
+		last_act = rep_joined.ex("all")
 	elif ans == "k":
 		last_act = o_at.ex()
 	elif ans == "v":
