@@ -10,8 +10,6 @@ import a_a
 import a_b
 import a_c
 import rep_joined
-import v_c
-import o_at
 import random
 
 from random import shuffle
@@ -54,7 +52,7 @@ while True:
 		pass
 	elif ans == "i":
 		call("nircmd.exe exec show C:/Program Files (x86)/DsNET Corp/aTube Catcher 2.0/yct.exe")
-	    last_act = "Abrir AtubeCatcher"
+		last_act = "Abrir AtubeCatcher"
 
 	elif ans == "j":
 		while True:
@@ -62,19 +60,19 @@ while True:
 				print("Volumen?: 0.0 - 100.0")
 				ans = float(input())
 				if ans <=100 and ans >=0:
-					call("nircmd.exe setappvolume python.exe " + str(ans/100) )
-				    return "Cambiar volume a "+str(ans)+"%"
+					call("nircmd.exe setappvolume python.exe " + str(ans/100))
+					last_act = ("Cambiar volume a "+str(ans)+"%")
 					break
 				else:
 					print("Un numero dentro dos parametros")
 			except:
 				print("Numeros")
 	elif ans == "k":
-		call("nircmd.exe suspendprocess python.exe " + str(ans/100) )
-		return "Parar o reproductor"
+		call("nircmd.exe suspendprocess python.exe ")
+		last_act =  "Parar o reproductor"
 	elif ans == "l":
-		call("nircmd.exe resumeprocess python.exe " + str(ans/100) )
-		return "Re activar o reproductor"
+		call("nircmd.exe resumeprocess python.exe ")
+		last_act = "Re activar o reproductor"
 	elif ans == "s":
 		break
 	else:
