@@ -37,6 +37,26 @@ def ex():
 						print num,i
 						num +=1
 					ans = input()
+					if ans == 0:
+						alb_name = "No_definido"
+						auth_name = "No_definido"
+						xeneros = []
+						file = open("genres.txt","r")
+						for i in file.readlines():
+							xeneros.append(i[0:-1])
+						file.close()
+						while True:
+							num = 0
+							print ("xeneros disponhibels:")
+							for i in authors:
+								print num,i
+								num +=1
+							ans = input()
+							if int(ans) <= num:
+								xen_name = xeneros[int(ans)]
+								break
+							else:
+								print("Non tenho rexistrado ese xenero")
 					if int(ans) <= num:
 						alb_name = "No_definido"
 						auth_name = authors[int(ans)]

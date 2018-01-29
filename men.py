@@ -46,7 +46,6 @@ while True:
 		last_act = rep_joined.ex("author")
 	elif ans == "g":
 		last_act = rep_joined.ex("genre")
-
 	elif ans == "h":
 		last_act = rep_joined.ex("all")
 		pass
