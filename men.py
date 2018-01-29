@@ -3,7 +3,7 @@
 from string import split
 import os
 from sys import executable
-from subprocess import Popen, CREATE_NEW_CONSOLE
+from subprocess import Popen, CREATE_NEW_CONSOLE,call
 
 import a_x
 import a_a
@@ -25,47 +25,57 @@ while True:
 	print ("c - Novo xenero")
 	print ("d - Novo album")
 	print ("e - Lista de reproducion por album")
-	print ("h - Lista de reproducion por artista")
-	print ("i - Lista de reproducion por xenero")
-	print ("j - Todo")
-	print ("k - Abrir AtubeCatcher")
-	print ("v - Para el volumen")
+	print ("f - Lista de reproducion por artista")
+	print ("g - Lista de reproducion por xenero")
+	print ("h - Todo")
+	print ("i - Abrir AtubeCatcher")
+	print ("j - Para el volumen")
+	print ("k - Parar o reproductor")
+	print ("l - Reinicar o reproductor")
 	print ("s - Sair")
 	ans = raw_input().lower()
 	if ans == "a":
 		last_act = a_a.ex()
+	elif ans == "b":
+		last_act = a_c.ex()
 	elif ans == "c":
 		last_act = a_x.ex()
-	elif ans == "b":
-	    last_act = a_c.ex()
 	elif ans == "d":
 		last_act = a_b.ex()
 	elif ans == "e":
 		last_act = rep_joined.ex("album")
-	elif ans == "h":
+	elif ans == "f":
 		last_act = rep_joined.ex("author")
-	elif ans == "i":
+	elif ans == "g":
 		last_act = rep_joined.ex("genre")
-	elif ans == "s":
-		break
-	elif ans == "ra":
-		pass
-	elif ans == "j":
+
+	elif ans == "h":
 		last_act = rep_joined.ex("all")
-	elif ans == "k":
-		last_act = o_at.ex()
-	elif ans == "v":
+		pass
+	elif ans == "i":
+		call("nircmd.exe exec show C:/Program Files (x86)/DsNET Corp/aTube Catcher 2.0/yct.exe")
+	    last_act = "Abrir AtubeCatcher"
+
+	elif ans == "j":
 		while True:
 			try:
 				print("Volumen?: 0.0 - 100.0")
-				ans = input()
+				ans = float(input())
 				if ans <=100 and ans >=0:
-					last_act = v_c.ex(ans)
+					call("nircmd.exe setappvolume python.exe " + str(ans/100) )
+				    return "Cambiar volume a "+str(ans)+"%"
 					break
 				else:
 					print("Un numero dentro dos parametros")
 			except:
 				print("Numeros")
-
+	elif ans == "k":
+		call("nircmd.exe suspendprocess python.exe " + str(ans/100) )
+		return "Parar o reproductor"
+	elif ans == "l":
+		call("nircmd.exe resumeprocess python.exe " + str(ans/100) )
+		return "Re activar o reproductor"
+	elif ans == "s":
+		break
 	else:
 		print ( " Non tenho programada esa opcion " )
