@@ -79,7 +79,6 @@ def ex():
 		print ("Arquivos disponhibels:")
 		for i in onlyfiles:
 			print i
-		num +=1
 		print "Mover y n"
 		ans = raw_input()
 		while True:
