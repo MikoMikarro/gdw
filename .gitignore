@@ -4,3 +4,4 @@ songs/**
 **/**.pyc
 *.txt
 *.bat
+probes.py

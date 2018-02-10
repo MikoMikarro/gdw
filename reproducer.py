@@ -13,12 +13,11 @@ while True:
 
 			print('Reproduciendo: "'+str(split(split(i,"/")[0],".")[0])+'" de '+str(split(i,"/")[2]))
 			playsound("songs/"+str(split(i,"/")[3][0:-1])+"/"+str(split(i,"/")[2])+"/"+str(split(i,"/")[1])+"/"+str(split(i,"/")[0]))
-			if time.clock()-t > 3600:
-				print "Time since session was started: ",(time.clock()-t)/3600," h"
-			elif time.clock()-t > 60:
-				print "Time since session was started: ",(time.clock()-t)/60," min"
-			else:
-				print "Time since session was started: ",time.clock()-t," s"
+			new_t = time.clock()-t
+			h = new_t//3600
+			m = (new_t-h*3600)//60
+			s = round(new_t-h*3600-m*60)
+			print "Time transcurred: ",h," h ",m," m ",s," s"
 		except UnicodeDecodeError:
 			print('Error ascii no arquivo: "'+str(split(split(i,"/")[0],".")[0])+'" de '+str(split(i,"/")[2]))
 		except KeyboardInterrupt:
