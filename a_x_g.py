@@ -31,10 +31,10 @@ def ex():
 			file.close
 			err_text.clear()
 			err_text.append("Xenero correctamente anhadido")
-	ap_ax = App(title="Anhadir xenero", layout = "grid")
-	input_box = TextBox(ap_ax,grid = [1,0])
+	ap_ax = App(title="Anhadir xenero", layout = "grid",width = 200, height = 90)
+	input_box = TextBox(ap_ax,grid = [1,0], width = 20)
 	n_text = Text(ap_ax,grid = [0,0], text = "Genero: ", align = "left")
 	button1 = PushButton(ap_ax,text = "Anhadir", command = a_gen,grid = [0,1])
 	button2 = PushButton(ap_ax,text = "Close", command = exit,grid = [1,1])
-	err_text = Text(ap_ax,grid = [0,2], align = "left")
+	err_text = Text(ap_ax,grid = [0,2,2,2], align = "left")
 	ap_ax.display()

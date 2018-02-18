@@ -67,8 +67,8 @@ def ex():
 			err_text.clear()
 			err_text.append("Album correctamente anhadido")
 
-	ap_ab = App(title="Anhadir album", layout = "grid")
-	input_box = TextBox(ap_ab,grid = [1,0])
+	ap_ab = App(title="Anhadir album", layout = "grid", height = 400, width = 350)
+	input_box = TextBox(ap_ab,grid = [1,0], width = 30)
 	n_text = Text(ap_ab,grid = [0,0], text = "Album: ", align = "left")
 	button1 = PushButton(ap_ab,text = "Anhadir", command = a_auth,grid = [0,1])
 	button2 = PushButton(ap_ab,text = "Close", command = exit,grid = [1,1])

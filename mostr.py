@@ -45,7 +45,7 @@ def ex():
     data = file.readlines()
     file.close()
     lenght = len(data)
-    appp = App(title="Menu", width = 500)
+    appp = App(title="Menu", height = 470)
     text = Text(appp, align = 'left')
     prev = PushButton(appp, command = go_prev, text = "Prev")
     next_b = PushButton(appp, command = go_next, text = "Next")

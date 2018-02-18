@@ -67,8 +67,8 @@ def ex():
 			err_text.clear()
 			err_text.append("Autor correctamente anhadido")
 
-	ap_ax = App(title="Anhadir autor", layout = "grid")
-	input_box = TextBox(ap_ax,grid = [1,0])
+	ap_ax = App(title="Anhadir autor", layout = "grid", height = 350,width = 300)
+	input_box = TextBox(ap_ax,grid = [1,0], width = 30)
 	n_text = Text(ap_ax,grid = [0,0], text = "Autor: ", align = "left")
 	button1 = PushButton(ap_ax,text = "Anhadir", command = a_auth,grid = [0,1])
 	button2 = PushButton(ap_ax,text = "Close", command = exit,grid = [1,1])
