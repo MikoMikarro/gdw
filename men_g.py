@@ -29,13 +29,16 @@ def most_can():
 def anh_xen():
     txt = 'from a_x_g import *; ex()'
     Popen('python -c '+'"'+txt+'"', CREATE_NEW_CONSOLE)
+def anh_aut():
+    txt = 'from a_a_g import *; ex()'
+    Popen('python -c '+'"'+txt+'"', CREATE_NEW_CONSOLE)
 
 app = App(title="Menu",height = 868,width = 476, layout="auto")
 menubar = MenuBar(app,
                   toplevel=["Mostrar","Anhadir"],
                   options=[
                       [ ["Mostrar autores", most_aut], ["Mostrar xeneros", most_xen], ["Mostrar albumes", most_alb], ["Mostrar cancions", most_can] ],
-                      [ ["Anhadir xenero", anh_xen]]
+                      [ ["Anhadir xenero", anh_xen], ["Anhadir autor", anh_aut]]
                   ])
 picture = Picture(app, image="gramola.gif")
 app.display()
