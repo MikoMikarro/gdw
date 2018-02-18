@@ -32,7 +32,11 @@ def ex():
 	data = file.readlines()
 	file.close()
 	lenght = len(data)
-
+	def refresh_butt(a):
+		if 	(slid.value+val.value*size)-1 < lenght:
+			button1.enable()
+		else:
+			button1.disable()
 	def exit():
 		ap_ax.destroy()
 	def a_auth():
@@ -68,7 +72,7 @@ def ex():
 	n_text = Text(ap_ax,grid = [0,0], text = "Autor: ", align = "left")
 	button1 = PushButton(ap_ax,text = "Anhadir", command = a_auth,grid = [0,1])
 	button2 = PushButton(ap_ax,text = "Close", command = exit,grid = [1,1])
-	slid= Slider(ap_ax, start = 1, end = 10,grid = [0,2], horizontal = False)
+	slid= Slider(ap_ax, start = 1, end = 10,grid = [0,2], horizontal = False, command = refresh_butt)
 	prev = PushButton(ap_ax, command = go_prev, text = "Prev",grid = [0,3])
 	next_b = PushButton(ap_ax, command = go_next, text = "Next", grid = [1,3])
 	text = Text(ap_ax, grid = [1,2])
