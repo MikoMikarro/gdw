@@ -5,3 +5,4 @@ songs/**
 *.txt
 *.bat
 probes.py
+player.py

@@ -1,16 +1,17 @@
 #-*- coding : utf-8 -*-
 from playsound import playsound
 import time
-
+import mutagen
 file = open('audio_list.txt','r')
 data = file.readlines()
 file.close()
 from string import split
 t = time.clock()
+
 while True:
 	for i in data[0:-1]:
 		try:
-
+			a = mutagen.File("songs/"+str(split(i,"/")[3][0:-1])+"/"+str(split(i,"/")[2])+"/"+str(split(i,"/")[1])+"/"+str(split(i,"/")[0]))
 			print('Reproduciendo: "'+str(split(split(i,"/")[0],".")[0])+'" de '+str(split(i,"/")[2]))
 			playsound("songs/"+str(split(i,"/")[3][0:-1])+"/"+str(split(i,"/")[2])+"/"+str(split(i,"/")[1])+"/"+str(split(i,"/")[0]))
 			new_t = time.clock()-t
