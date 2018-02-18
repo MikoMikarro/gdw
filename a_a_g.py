@@ -57,8 +57,8 @@ def ex():
 			file.close()
 			os.mkdir("songs/"+xen_name+"/"+auth_name)
 			os.mkdir("songs/"+xen_name+"/"+auth_name+"/No_definido")
-			file = open("genres.txt","w")
-			file.write(act_data+xen_name+"\n")
+			file = open("authors.txt","w")
+			file.write(act_data+auth_name+"/"+xen_name+"\n")
 			file.close
 			err_text.clear()
 			err_text.append("Autor correctamente anhadido")
