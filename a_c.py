@@ -3,8 +3,10 @@ import os
 from os import listdir
 from os.path import isfile, join
 import shutil
+import pyperclip
 def ex():
-	paste = "to_import/"
+	wait = raw_input("Copia a ruta da carpeta e pulsa enter")
+	paste = pyperclip.paste()
 	albumes = []
 	authors = []
 	xeneros = []
@@ -92,7 +94,7 @@ def ex():
 				break
 		for i in onlyfiles:
 			try:
-				shutil.move(paste+"/"+ i,"songs/"+xen_name+"/"+auth_name+"/"+alb_name+"/"+i)
+				shutil.copy(paste+"/"+ i,"songs/"+xen_name+"/"+auth_name+"/"+alb_name+"/"+i)
 			except:
 				print("Error")
 				while True:
