@@ -1,7 +1,4 @@
 import os
-import string
-from string import split
-from string import replace
 def ex():
 	file = open("albumes.txt","r")
 	act_data = file.read()
@@ -13,7 +10,7 @@ def ex():
 	while True:
 		alb_name = replace(raw_input("Indica o nome do Album: ")," ","_")
 		for i in albumes:
-	 		if split(i,"/")[0].lower() == alb_name.lower():
+			if split(i,"/")[0].lower() == alb_name.lower():
 				print ("Album xa anhadido")
 				check = True
 				break
@@ -33,7 +30,7 @@ def ex():
 		num = 0
 		print ("Autores disponhibels:")
 		for i in authors:
-			print num,i
+			print("%s%s") %(num.i)
 			num +=1
 		ans = input()
 		if ans <= num:

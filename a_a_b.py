@@ -21,7 +21,7 @@ def ex():
 		prev.enable()
 		if val.value*size+size > lenght:
 			next_b.disable()
-		refresh_butt()
+		refresh_butt(1)
 	def go_prev():
 		val.value = val.value - 1
 		text.clear()
@@ -31,7 +31,7 @@ def ex():
 		next_b.enable()
 		refresh_butt()
 	file = open(file_name,"r")
-	data = file.readlines()
+	data = file.readlines(1)
 	file.close()
 	lenght = len(data)
 	def refresh_butt(a):

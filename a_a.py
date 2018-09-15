@@ -1,7 +1,4 @@
 import os
-import string
-from string import split
-from string import replace
 def ex():
 	while True:
 		file = open("authors.txt","r")
@@ -14,7 +11,7 @@ def ex():
 		while True:
 			aut_name = replace(raw_input("Indica o nome do author: ")," ","_")
 			for i in authors:
-		 		if split(i,"/")[0].lower() == aut_name.lower():
+				if split(i,"/")[0].lower() == aut_name.lower():
 					print ("Autor xa anhadido")
 					check = True
 					break
@@ -30,9 +27,9 @@ def ex():
 		file.close()
 		while True:
 			num = 0
-	  		print ("Xeneros disponhibels:")
+			print ("Xeneros disponhibels:")
 			for i in xenres:
-				print num,i
+				print(str(num)+str(i))
 				num +=1
 			ans = input()
 			if int(ans) <= num:

@@ -1,11 +1,10 @@
 import random
 from random import shuffle
-import string
-from string import split
+import split
 from sys import executable
 from subprocess import Popen, CREATE_NEW_CONSOLE
 
-def ex(filter):
+def ex(filter = "all"):
     if filter == "author":
         file_name = "authors.txt"
         txt_intro = "Autores"
@@ -29,26 +28,26 @@ def ex(filter):
             print(txt_intro+" disponhibles")
             for i in data[1:]:
                 if filter != "genre":
-                    print num," ",split(i,"/")[0]
+                    print (str(num)+" "+i.split("/")[0])
                 else:
-                    print num," ",i[:-1]
+                    print (str(num)+" "+i[:-1])
                 num+=1
             ans = input()
             if ans <= num:
                 if filter != "genre":
-                    filt_name = split(data[1:][ans],"/")[0]
+                    filt_name = data[1:][ans].split("/")[0]
                 else:
                     filt_name = data[1:][ans]
                 break
             else:
-                print txt_intro," non anhadido"
+                print (txt_intro+" non anhadido")
     file = open("audio_data.txt","r")
     data = file.readlines()
     file.close()
     sng_list = []
     if filter != "all":
         for i in data[:-1]:
-            if split(i,"/")[id] == filt_name:
+            if i.split("/")[id] == filt_name:
                 sng_list.append(i)
     else:
         for i in data[:-1]:
@@ -56,7 +55,7 @@ def ex(filter):
     shuffle(sng_list)
     text = ""
     for i in sng_list:
-        text  = (text+split(i,"/")[0]+"/"+split(i,"/")[1]+"/"+split(i,"/")[2]+"/"+split(i,"/")[3])
+        text  = (text+i.split("/")[0]+"/"+i.split("/")[1]+"/"+i.split("/")[2]+"/"+i.split("/")[3])
     file = open("audio_list.txt","w")
     file.write(text)
     file.close()

@@ -1,6 +1,5 @@
 import os
-import string
-from string import replace
+
 def ex():
 	file = open("genres.txt","r")
 	act_data = file.read()
@@ -12,8 +11,8 @@ def ex():
 	while True:
 		xen_name = replace(raw_input("Indica o nome do xenero que queres agregar: ")," ","_")
 		for i in xenres[:]:
-	 		if i[0:-1].lower() == xen_name.lower():
-				print ("Xenero xa anhadido")
+			if i[0:-1].lower() == xen_name.lower():
+				print("Xenero xa anhadido")
 				check = True
 				break
 			else:

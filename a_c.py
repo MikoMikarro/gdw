@@ -1,4 +1,3 @@
-from string import split
 import os
 from os import listdir
 from os.path import isfile, join
@@ -6,7 +5,7 @@ import shutil
 import pyperclip
 def ex():
 	wait = raw_input("Copia a ruta da carpeta e pulsa enter")
-	paste = pyperclip.paste()
+	paste = pyperclip.paste()+ "/"
 	albumes = []
 	authors = []
 	xeneros = []
@@ -20,7 +19,7 @@ def ex():
 		num = 0
 		print ("Albumes disponhibels:")
 		for i in albumes:
-			print num,i," - (",authors[num],')'
+			print (str(num)+str(i)+" - ("+authors[num]+')')
 			num +=1
 		ans = input()
 		try:
@@ -36,7 +35,7 @@ def ex():
 					num = 0
 					print ("Autores disponhibels:")
 					for i in authors:
-						print num,i
+						print (str(num)+str(i))
 						num +=1
 					ans = input()
 					if ans == 0:
@@ -51,7 +50,7 @@ def ex():
 							num = 0
 							print ("xeneros disponhibels:")
 							for i in authors:
-								print num,i
+								print (str(num)+str(i))
 								num +=1
 							ans = input()
 							if int(ans) <= num:
@@ -80,8 +79,8 @@ def ex():
 	while True:
 		print ("Arquivos disponhibels:")
 		for i in onlyfiles:
-			print i
-		print "Mover y n"
+			print(i)
+		print("Mover y n")
 		ans = raw_input()
 		while True:
 			if ans.lower() == "y":
@@ -94,14 +93,14 @@ def ex():
 				break
 		for i in onlyfiles:
 			try:
-				shutil.copy(paste+"/"+ i,"songs/"+xen_name+"/"+auth_name+"/"+alb_name+"/"+i)
+				shutil.copyfile(paste+ i,"songs/"+xen_name+"/"+auth_name+"/"+alb_name+"/"+i)
 			except:
 				print("Error")
 				while True:
 					print("Eliminar o arquivo?y/n")
 					yn = raw_input().lower()
 					if yn == "y":
-						os.remove(paste+ "/" + i)
+						os.remove(paste+i)
 					elif yn == "n":
 						onlyfiles.pop(i)
 					else:

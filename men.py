@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from string import split
+
 import os
 from sys import executable
 from subprocess import Popen, CREATE_NEW_CONSOLE,call
-
 import a_x
 import a_a
 import a_b
@@ -31,7 +30,7 @@ while True:
 	print ("k - Parar o reproductor")
 	print ("l - Reinicar o reproductor")
 	print ("s - Sair")
-	ans = raw_input().lower()
+	ans = str(input()).lower()
 	if ans == "a":
 		last_act = a_a.ex()
 	elif ans == "b":
